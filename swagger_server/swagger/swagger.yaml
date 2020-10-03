@@ -4,10 +4,10 @@ info:
   contact:
     name: Guénolé de Cadoudal
     email: guenoledc@yahoo.fr
-  version: 0.1.0
+  version: 0.1.2
 servers:
-- url: https://virtserver.swaggerhub.com/guenoledc/FrenchDictionary/0.1.0
-  description: SwaggerHub API Auto Mocking
+- url: /french-dictionary
+  description: Default URL
 paths:
   /random:
     get:
