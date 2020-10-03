@@ -4,9 +4,9 @@ info:
   contact:
     name: Guénolé de Cadoudal
     email: guenoledc@yahoo.fr
-  version: 0.1.0
+  version: 0.1.1
 servers:
-- url: https://virtserver.swaggerhub.com/guenoledc/FrenchDictionary/0.1.0
+- url: https://virtserver.swaggerhub.com/guenoledc/FrenchDictionary/0.1.1
   description: SwaggerHub API Auto Mocking
 paths:
   /random:

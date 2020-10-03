@@ -19,7 +19,7 @@ class TestDefaultController(BaseTestCase):
         
         """
         response = self.client.open(
-            '/guenoledc/FrenchDictionary/0.1.0/random',
+            '/guenoledc/FrenchDictionary/0.1.1/random',
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
