@@ -9,7 +9,7 @@ from swagger_server import util
 def random_get():  # noqa: E501
     """random_get
 
-    get one word from the dictionnary choosen randomly # noqa: E501
+    get one word from the Dictionary choosen randomly # noqa: E501
 
 
     :rtype: Word

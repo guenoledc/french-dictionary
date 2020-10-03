@@ -17,10 +17,10 @@ REQUIRES = ["connexion"]
 setup(
     name=NAME,
     version=VERSION,
-    description="French Dictionnary",
+    description="French Dictionary",
     author_email="guenoledc@yahoo.fr",
     url="",
-    keywords=["Swagger", "French Dictionnary"],
+    keywords=["Swagger", "French Dictionary"],
     install_requires=REQUIRES,
     packages=find_packages(),
     package_data={'': ['swagger/swagger.yaml']},

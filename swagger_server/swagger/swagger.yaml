@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: French Dictionnary
+  title: French Dictionary
   contact:
     name: Guénolé de Cadoudal
     email: guenoledc@yahoo.fr
@@ -11,7 +11,7 @@ servers:
 paths:
   /random:
     get:
-      description: get one word from the dictionnary choosen randomly
+      description: get one word from the Dictionary choosen randomly
       operationId: random_get
       responses:
         "200":

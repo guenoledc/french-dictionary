@@ -50,9 +50,9 @@ dictionaryStructure = {
   }
 }
 
-class Dictionnary():
+class Dictionary():
   """
-  defines a dictionnary with all the words
+  defines a Dictionary with all the words
   """
   def __init__(self, basepath: str):
     super().__init__()
@@ -68,7 +68,7 @@ class Dictionnary():
 
   def loadFile(self, filepath: str = None):
     """
-    load a file from the dictionnary storage
+    load a file from the Dictionary storage
     """
     if filepath == None:
       filepath = "dictionary.txt"

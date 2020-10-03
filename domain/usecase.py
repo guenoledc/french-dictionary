@@ -1,7 +1,7 @@
-from domain.types import Dictionnary
+from domain.types import Dictionary
 import random
 
-GlobalDictionary = Dictionnary("./French-Dictionary")
+GlobalDictionary = Dictionary("./French-Dictionary")
 GlobalDictionary.loadFile()
 
 def getRandomWord(minLen: int=1, maxLen: int=1000):
