@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: French Dictionnary
+  contact:
+    name: Guénolé de Cadoudal
+    email: guenoledc@yahoo.fr
+  version: 0.1.0
+servers:
+- url: https://virtserver.swaggerhub.com/guenoledc/FrenchDictionary/0.1.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /random:
+    get:
+      description: get one word from the dictionnary choosen randomly
+      operationId: random_get
+      responses:
+        "200":
+          description: Successful response, with the following structure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Word'
+        "500":
+          description: Failed to respond
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-openapi-router-controller: swagger_server.controllers.default_controller
+components:
+  schemas:
+    Error:
+      required:
+      - message
+      type: object
+      properties:
+        message:
+          type: string
+        cause:
+          type: string
+      description: defines an error message
+    Word:
+      type: object
+      properties:
+        value:
+          type: string
+          example: maison
+      description: defines one word
+      example:
+        value: maison
+
