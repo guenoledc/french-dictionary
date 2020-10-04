@@ -3,6 +3,7 @@
 import connexion
 import os
 import flask
+import waitress
 
 from swagger_server import encoder
 
@@ -19,7 +20,8 @@ def main():
     api = app.add_api('swagger.yaml', arguments={'title': 'French Dictionary'}, pythonic_params=True)
     app.add_url_rule("/", None, root(app, api))
     port = int(os.environ.get("PORT", 8080))
-    app.run(port=port, host="0.0.0.0")
+    #app.run(port=port, host="0.0.0.0")
+    waitress.serve(app, port=port, host="*")
 
 
 if __name__ == '__main__':
