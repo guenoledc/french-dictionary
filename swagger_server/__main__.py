@@ -27,8 +27,10 @@ def main():
     api = app.add_api('swagger.yaml', arguments={'title': 'French Dictionary'}, pythonic_params=True)
     app.add_url_rule("/", None, root(app, api))
     port = int(os.environ.get("PORT", 8080))
-    #app.run(port=port, host="0.0.0.0")
-    waitress.serve(app, port=port, host="*")
+    if os.environ.get("ENV", "DEVELOPMENT") == "DEVELOPMENT":
+        app.run(port=port, host="0.0.0.0")
+    else:
+        waitress.serve(app, port=port, host="*")
 
 
 if __name__ == '__main__':
