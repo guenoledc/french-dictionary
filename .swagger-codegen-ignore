@@ -21,3 +21,8 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+
+requirements.txt
+swagger_server/controllers/*
+swagger_server/__main__.py
