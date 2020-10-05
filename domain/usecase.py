@@ -8,11 +8,12 @@ def getRandomWord(minLen: int=1, maxLen: int=1000):
   """
   docstring
   """
-  count = GlobalDictionary.wordCount()
-  len = 0
-  word = None
-  while len < minLen or len > maxLen:
-    index = random.randint(0, count-1)
-    word = GlobalDictionary.allWords[index]
-    len = word.length()
+  filtered = list(filter(lambda w: (w.length()>=minLen and w.length()<=maxLen), GlobalDictionary.allWords))
+  count = len(filtered)
+  if count==0:
+    return ""
+  index = random.randint(0, count-1)
+  word = filtered[index]
+  length = word.length()
+  #print(index, length)
   return word.value

@@ -18,3 +18,14 @@ def random_get():  # noqa: E501
     return {
         "word": getRandomWord(5, 10)
     }
+
+def one_get():
+    print("args = ", connexion.request.args)
+    min = int(connexion.request.args["minLength"]) if "minLength" in connexion.request.args else 4
+    max = int(connexion.request.args["maxLength"]) if "maxLength" in connexion.request.args else 100
+    if min>max:
+        min=max
+    #print(min, max)
+    return {
+        "word": getRandomWord(min, max)
+    }

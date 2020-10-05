@@ -9,6 +9,35 @@ servers:
 - url: /french-dictionary/1.0
   description: Default URL
 paths:
+  /one:
+    get:
+      description: get one random word
+      operationId: one_get
+      parameters:
+      - name: minLength
+        in: query
+        description: The min length of the word to be returned. default value is 4
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: maxLength
+        in: query
+        description: The max length of the word to be returned. default value is 100
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Word'
+      x-openapi-router-controller: swagger_server.controllers.default_controller
   /random:
     get:
       description: get one word from the Dictionary choosen randomly
