@@ -25,3 +25,4 @@
 
 requirements.txt
 swagger_server/controllers/*
+swagger_server/__main__.py
