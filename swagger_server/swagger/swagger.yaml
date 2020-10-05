@@ -56,6 +56,33 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
       x-openapi-router-controller: swagger_server.controllers.default_controller
+  /matcher/{pattern}:
+    get:
+      description: get words that match the pattern
+      operationId: pattern_matcher_get
+      parameters:
+      - name: pattern
+        in: path
+        description: a set of letters and hypen (_ for any letter)
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Words'
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-openapi-router-controller: swagger_server.controllers.default_controller
 components:
   schemas:
     Error:
@@ -77,4 +104,13 @@ components:
       description: defines one word
       example:
         value: maison
+    Words:
+      type: array
+      description: defines one word
+      example:
+      - maison
+      - baiton
+      items:
+        type: string
+        example: maison
 
