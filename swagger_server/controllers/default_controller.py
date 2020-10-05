@@ -5,7 +5,7 @@ from swagger_server.models.error import Error  # noqa: E501
 from swagger_server.models.word import Word  # noqa: E501
 from swagger_server import util
 
-from domain.usecase import getRandomWord
+from domain.usecase import getRandomWord, findByPattern
 
 def random_get():  # noqa: E501
     """random_get
@@ -29,3 +29,7 @@ def one_get():
     return {
         "word": getRandomWord(min, max)
     }
+
+def pattern_matcher_get(pattern):
+    print("pattern = ", pattern)
+    return findByPattern(pattern)
